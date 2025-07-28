@@ -1,0 +1,27 @@
+# Ignore environment variables
+.env
+
+# Node modules
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Optional: ignore logs created by your app
+logs/
+*.log
+
+# Ignore build output
+dist/
+build/
+
+# Ignore system files (macOS, Linux, Windows)
+.DS_Store
+Thumbs.db
+
+# Ignore editor-specific files
+.vscode/
+.idea/

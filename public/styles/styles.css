@@ -1,0 +1,241 @@
+body {
+    background-color: #E8E8E8;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+    margin-top: 40px;
+}
+
+.title2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+    margin-top: 40px;
+}
+
+.main-title {
+    font-size: 60pt;
+}
+
+.ingrid-darling-regular {
+    font-family: "Ingrid Darling", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.book-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 180px;
+    justify-items: center;
+    margin-bottom: 200px;
+}
+
+.card {
+    border-radius: 5%;
+    border-color: black;
+}
+
+.card-img-top {
+    margin-top: 15px;
+    margin-bottom: 30px;
+    border-radius: 15%;
+}
+
+.btn-edit, .btn-delete {
+    width: 100px
+}
+
+.btn-delete {
+    margin-left: 45px;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.crafty-girls-regular {
+    font-family: "Crafty Girls", cursive;
+    font-weight: 600;
+    font-style: normal;
+}
+  
+.book-image {
+    border-radius: 8%;
+}
+
+.book-image-container {
+    display: flex;
+    margin-left: 200px;
+    margin-top: 80px
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.bold-a-img {
+    font-weight: 700;
+}
+
+.text-after-img {
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+
+
+.dosis-200 {
+  font-family: "Dosis", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.angkor-regular {
+    font-family: "Angkor", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.dancing-script-300 {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 15pt;
+}
+
+.ojuju-300 {
+  font-family: "Ojuju", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.one-note {
+    margin-bottom: 60px;
+    margin-top: 15px;
+}
+
+.input-title {
+    font-size: 28pt;
+    text-align: center;
+}
+
+.my-notes-title {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.btn-add-note {
+    height: 30px;
+    padding-bottom: 33px;
+}
+
+.add-note-text {
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.note-column {
+    margin-bottom: 30px;
+}
+
+.btn-delete-note {
+    margin-bottom: 60px;
+}
+
+.input-title {
+    border-radius: 20px;
+}
+
+.inputs {
+    border-radius: 20px;
+}
+
+.input-about {
+    border-radius: 20px;
+    width: 800px;
+    height: 300px
+}
+
+.citation, .owncomment {
+    border-radius: 20px;
+    width: 600px;
+    height: 200px
+}
+
+.btn-delete-note-add {
+    margin-top: 30px;
+}
+
+.submit-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -70px;
+    margin-bottom: 200px;
+}
+
+.btn-save {
+    width: 150px;
+    height: 60px;
+    border-radius: 30px;
+    font-size: 20pt;
+}
+.function-bar {
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.btn-function {
+    font-size: 20pt;
+    border-radius: 25px;
+}
+
+.rating {
+    margin-right: 7px;
+}
+
+.checked {
+    color: orange;
+}
+
+.stars {
+    margin-left: 80px;
+}
+
+.err-input-title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px
+}
+
+.error {
+    color: red;
+}

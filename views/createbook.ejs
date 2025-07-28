@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Book Notes</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Angkor&family=Dancing+Script:wght@400..700&family=Dosis:wght@200..800&family=Ojuju:wght@200..800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Angkor&family=Dancing+Script:wght@400..700&family=Dosis:wght@200..800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Angkor&family=Dancing+Script:wght@400..700&family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Angkor&display=swap" rel="stylesheet">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ingrid+Darling&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Crafty+Girls&family=Ingrid+Darling&display=swap" rel="stylesheet">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+       
+        <link rel="stylesheet" href="/styles/styles.css">
+    </head>
+
+    <body>
+
+        <form action="/submitAdd" method="post">
+            <div class="title-container">
+                <% if (locals.errorMessages && keys.includes("title")) { %>
+                    <div class="err-input-title-container">
+
+                        <input type="text" id="title" class="book-title ingrid-darling-regular input-title error-input-title" name="title" value="" placeholder="Title">
+
+                        <p class="error-title error"><%= errorMessages.title%></p>
+                    </div>
+                 
+                    
+                <% } else { %>
+                    <input type="text" id="title" class="book-title ingrid-darling-regular input-title" name="title" value="" placeholder="Title">
+                <% } %>
+
+                
+            </div>
+
+            <div class="book-image-container">
+                <div class="text-after-img">
+
+                    <% if (locals.errorMessages && keys.includes("dayofread")) { %>
+                        <p><span class="bold-a-img angkor-regular">Date of Read:</span> <span class="book-data dosis-200"><span class="book-data dosis-200"><input type="date" id="dayofread" class="inputs" name="dayofread" value=""><span><p class="error"><%= errorMessages.dayofread%></p></span></span></p>
+                   <%  } else { %>
+                        <p><span class="bold-a-img angkor-regular">Date of Read:</span> <span class="book-data dosis-200"><span class="book-data dosis-200"><input type="date" id="dayofread" class="inputs" name="dayofread" value=""></span></p>
+                   <% } %>
+
+
+                    <p><span class="bold-a-img angkor-regular rating">Rating:</span> 
+                        <input class="rating-input" name="rating" hidden type="text" value="0"/>
+                        <span id="star-1" class="fa fa-star"></span>
+                        <span id="star-2" class="fa fa-star"></span>
+                        <span id="star-3" class="fa fa-star"></span>
+                        <span id="star-4" class="fa fa-star"></span>
+                        <span id="star-5" class="fa fa-star"></span>
+                    </p>
+
+
+                    <% if (locals.errorMessages && keys.includes("isbn")) { %>
+                        <p><span class="bold-a-img angkor-regular">ISBN:</span> <span class="book-data dosis-200 inputs"><input type="text" id="isbn" name="isbn" class="inputs" value=""></span>
+                            <p class="error"><%= errorMessages.isbn%></p></p>
+                    <% } else { %>
+                        <p><span class="bold-a-img angkor-regular">ISBN:</span> <span class="book-data dosis-200"><input type="text" id="isbn" name="isbn" class="inputs error-isbn" value=""></span></p>
+                    <% } %>
+                    
+
+
+                </div>
+            </div>
+
+
+            <div class="content-container">
+
+                <h2 class="angkor-regular">What is it about?</h2>
+    
+                <!-- <p class="dancing-script-300"><input type="text" id="about" class="input-about" name="about" value=""></p> -->
+
+                <textarea id="about" class="dancing-script-300 input-about" name="about"></textarea>
+    
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+    
+                
+                
+                <div class="my-notes-title">
+                    <h2 class="angkor-regular my-notes">My Notes</h2>
+                    <button type="button" class="btn btn-dark btn-add-note" onclick="addNote()"><span class="add-note-text">+</span></button>
+                </div>
+                
+                <div class="note-area">
+
+    
+                    
+            </div>
+
+            <div class="submit-container">
+                
+            <button type="submit" class="btn btn-primary btn-save">Save</button>
+                <!-- <input type="submit" value="Submit"> -->
+            </div>
+        </form>
+
+
+
+        
+        <script>
+            let i = 1;
+    
+            function addNote() {
+                let noteDiv = document.createElement("div");
+    
+                noteDiv.innerHTML = `
+                <div class="new-note-area">
+                    <div>
+                    <textarea type="text" class="citation ojuju-300" name="citation" value="" placeholder="Citation"></textarea><br/><br/>
+                    <textarea type="text" class="owncomment dancing-script-300" name="owncomment" placeholder="Comment"></textarea>
+                </div>
+                  
+                        <button type="button" class="btn btn-danger delete-new btn-delete-note btn-delete-note-add" onclick="deleteNewNode()">Delete</button>
+                        <br><br>
+                </div>
+                `
+                i++;
+    
+                document.querySelector(".note-area").appendChild(noteDiv);
+            }
+    
+            function deleteNewNode() {
+                document.querySelector(".new-note-area").remove();
+            }
+
+
+        
+
+
+    document.querySelectorAll(".fa").forEach(element => {
+    element.addEventListener("click", function() {
+        console.log(this.id);
+        this.classList.add('checked');
+        document.querySelector(".rating-input").setAttribute('value', this.id.split("-")[1])
+
+        let id = this.id;
+        switch (id) {
+        case 'star-1':
+            document.querySelector("#star-2").classList.remove('checked');
+            document.querySelector("#star-3").classList.remove('checked');
+            document.querySelector("#star-4").classList.remove('checked');
+            document.querySelector("#star-5").classList.remove('checked');
+            break;
+        
+        case 'star-2':
+            document.querySelector("#star-1").classList.add('checked');
+            document.querySelector("#star-3").classList.remove('checked');
+            document.querySelector("#star-4").classList.remove('checked');
+            document.querySelector("#star-5").classList.remove('checked');
+            break;
+        
+        case 'star-3':
+            document.querySelector("#star-1").classList.add('checked');
+            document.querySelector("#star-2").classList.add('checked');
+            document.querySelector("#star-4").classList.remove('checked');
+            document.querySelector("#star-5").classList.remove('checked');
+            break;
+
+        case 'star-4':
+            document.querySelector("#star-1").classList.add('checked');
+            document.querySelector("#star-2").classList.add('checked');
+            document.querySelector("#star-3").classList.add('checked');
+            document.querySelector("#star-5").classList.remove('checked');
+            break;
+
+        case 'star-5':
+            document.querySelector("#star-1").classList.add('checked');
+            document.querySelector("#star-2").classList.add('checked');
+            document.querySelector("#star-3").classList.add('checked');
+            document.querySelector("#star-4").classList.add('checked');
+            break;
+        
+        default:
+            break;
+        }
+      })
+    });
+        </script>
+
+    </body>
+</html>
