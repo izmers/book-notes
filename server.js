@@ -131,14 +131,11 @@ async function deleteNote(nodeId) {
 
 function transformDate(dayofread) {
   let date = new Date(dayofread);
-  date = date.toLocaleDateString();
-  console.log(date.split("."));
-  let newDate =
-    date.split(".")[2] +
-    "-" +
-    date.split(".")[1].padStart(2, "0") +
-    "-" +
-    date.split(".")[0].padStart(2, "0");
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+
+  const newDate = `${year}-${month}-${day}`;
   console.log(newDate);
 
   return newDate;
